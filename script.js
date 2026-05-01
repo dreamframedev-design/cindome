@@ -136,31 +136,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function alignDomes() {
-    var approachBg = document.querySelector('.approach-bg-img');
-    if (approachBg) {
-      approachBg.style.height = '';
-      approachBg.style.top = '';
-      approachBg.style.bottom = '';
-    }
-
-    var newsBg = document.querySelector('.news-bg-img');
-    var newsSection = document.querySelector('.news-section');
-    var newsImg = document.querySelector('.news-img-frame');
-    if (newsSection && newsImg && newsBg && window.innerWidth > 768) {
-      var nsRect = newsSection.getBoundingClientRect();
-      var niRect = newsImg.getBoundingClientRect();
-      var nBottomPx = niRect.bottom - nsRect.top;
-      newsBg.style.height = nBottomPx + 'px';
-      newsBg.style.top = '0';
-      newsBg.style.bottom = '';
-    } else if (newsBg) {
-      newsBg.style.height = '';
-      newsBg.style.top = '';
-      newsBg.style.bottom = '';
-    }
-  }
-
-  alignDomes();
-  window.addEventListener('resize', alignDomes);
 });
